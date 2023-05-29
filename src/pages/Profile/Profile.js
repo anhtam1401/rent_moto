@@ -66,7 +66,7 @@ function Profile() {
                                     </MDBCol>
                                     <MDBCol sm="8">
                                         <MDBCardText className="text-muted">
-                                            Bùi Viết Trường
+                                            Nguyễn Hữu Tam
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol sm="1">
@@ -80,7 +80,7 @@ function Profile() {
                                     </MDBCol>
                                     <MDBCol sm="8">
                                         <MDBCardText className="text-muted">
-                                            viettruong0825@gmail.com
+                                            nguyenhuutam208@gmail.com
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol sm="1">

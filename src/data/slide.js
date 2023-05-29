@@ -3,14 +3,14 @@ export const slider_data = [
         id:1,
         title: '',
         description: "",
-        url: 'https://thienanit.com/wp-content/uploads/2020/10/89845496_103400944620895_3782875510619504640_o-1024x686.jpg'
+        url: 'https://toplist.vn/images/800px/honda-763224.jpg'
     },
     {
         id:2,
-        url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg'
+        url: 'https://trangtrixemayhoangtri.com/upload/product/554647765129.jpg'
     },
     {
         id:3,
-        url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg'
+        url: 'https://hoahonda.com.vn/wp-content/uploads/2023/01/cacdongxemayhondadongco160phankhoi.jpg'
     },
 ];

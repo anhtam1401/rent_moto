@@ -1,5 +1,6 @@
 import { CartContext } from "~/Context/CartContext";
 import {useContext} from 'react'
+import { Button } from "antd";
 
 function Cart() {
     const { cartItems } = useContext(CartContext);
@@ -9,10 +10,6 @@ function Cart() {
             <div class="row">
                 <div class="col-md-9">
                     <div class="ibox">
-                        <div class="ibox-title">
-                            <span class="pull-right">(<strong>5</strong>) items</span>
-                            <h5>Items in your cart</h5>
-                        </div>
                         {cartItems.map((cartItem) => (
                              <div>
                              {cartItem.data_moto.map((item) => (
@@ -34,29 +31,17 @@ function Cart() {
                                             <p class="small">
                                                 {item.description}
                                             </p>
-                                            <dl class="small m-b-none">
-                                                <dt>{item.price}s</dt>
-                                                <dd>A description list is perfect for defining terms.</dd>
-                                            </dl>
         
-                                            <div class="m-t-sm">
-                                                <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
-                                                |
-                                                <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
-                                            </div>
-                                        </td>
-        
-                                        <td>
                                             
-                                            <s class="small text-muted">$230,00</s>
-                                        </td>
-                                        <td width="65">
-                                            <input type="text" class="form-control" placeholder="1" />
                                         </td>
                                         <td>
                                             <h4>
                                                 {item.price}
                                             </h4>
+                                            <div class="m-t-sm">
+                                                |
+                                                <a href="#" class="text-muted"><i class="fa fa-trash"></i> Xóa</a>
+                                            </div>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -69,23 +54,19 @@ function Cart() {
                     
                 )
                 )}
-                        <div class="ibox-content">
-                            <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
-                            <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h5>Cart Summary</h5>
+                            <Button>Thanh Toán</Button>
                         </div>
                         <div class="ibox-content">
                             <span>
-                                Total
+                                Tổng tiền
                             </span>
                             <h2 class="font-bold">
-                                $390,00
+                                390,000 VND
                             </h2>
             </div>
         </div>

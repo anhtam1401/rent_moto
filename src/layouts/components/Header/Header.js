@@ -62,7 +62,7 @@ function Header() {
                 </div>
 
                 <div className={cx("actions")}>
-                    <FontAwesomeIcon icon={faSearch} />
+                    <FontAwesomeIcon icon={faSearch} className={cx("icon_search")}/>
                     {user ? (
                         <>
                             <Button className={cx("cart-btn")} to={config.routes.cart}>
