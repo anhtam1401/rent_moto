@@ -86,23 +86,7 @@ function Slider(props) {
 
 const SliderItem = (props) => (
     <div className={cx("slider-item", `${props.active ? "active" : ""}`)}>
-        <div className={cx("slider-item__info")}>
-            <div className={cx("slider-item__info__title")}>
-                <span>{props.item.title}</span>
-            </div>
-            <div className={cx("slider-item__info__description")}>
-                <span>{props.item.description}</span>
-            </div>
-            <div className={cx("slider-item__info__btn")}>
-                <Link to={props.item.path}>
-                    <Button primary>Bắt đầu</Button>
-                </Link>
-            </div>
-        </div>
-        <div className={cx("slider-item__image")}>
-            <div className={cx("shape-item")}></div>
-            <Image src={props.item.img} alt={"image-item"} />
-        </div>
+       <Image src={props.item.url} className={cx('image')}/>
     </div>
 );
 

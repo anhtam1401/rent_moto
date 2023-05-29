@@ -10,7 +10,7 @@ import Menu from "~/components/Popper/Menu";
 import { userMenu } from "~/data/userMenu";
 import Search from "../Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { CartContext } from "~/Context/CartContext";
 import { AppContext } from "~/Context/AppContext";
@@ -61,16 +61,14 @@ function Header() {
                     </ul>
                 </div>
 
-                <Search />
-
                 <div className={cx("actions")}>
+                    <FontAwesomeIcon icon={faSearch} />
                     {user ? (
                         <>
-                            <Button className={cx("cart-btn")}>
+                            <Button className={cx("cart-btn")} to={config.routes.cart}>
                                 <FontAwesomeIcon
                                     icon={faCartShopping}
                                     className={cx("cart")}
-                                    onClick={() => setIsOpen(true)}
                                 />
                                 <div className={cx("quantity")}>
                                     {cartItems.length}

@@ -28,7 +28,7 @@ function Register() {
                             </h2>
                             <p
                                 className="fw-bold mb-5 mt-2 fz-2rem"
-                                style={{ color: "#ff3d13" }}
+                                style={{ color: "#14a9ce" }}
                             >
                                 Welcome!
                             </p>
@@ -62,7 +62,7 @@ function Register() {
                                 className="mx-2 px-5 mb-5 fw-bold"
                                 color="white"
                                 size="lg"
-                                style={{ color: "#ff3d13", fontSize: "16px" }}
+                                style={{ color: "#14a9ce", fontSize: "16px" }}
                             >
                                 Đăng kí
                             </MDBBtn>
@@ -73,7 +73,7 @@ function Register() {
                                     <Link
                                         to="/login"
                                         class="fw-bold"
-                                        style={{ color: "#ff3d13" }}
+                                        style={{ color: "#14a9ce" }}
                                     >
                                         Đăng nhập
                                     </Link>

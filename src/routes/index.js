@@ -7,6 +7,7 @@ import HomeAdmin from "~/pages/Admin/HomeAdmin";
 import Profile from "~/pages/Profile/Profile";
 import AdminLayout from "~/layouts/AdminLayout";
 import Account from "~/pages/Admin/Account";
+import Cart from '~/pages/Cart'
 import User from "~/pages/Admin/User";
 import ManagerMoto from "~/pages/Admin/ManagerMoto";
 import AcceptMoto from "~/pages/Admin/AcceptMoto";
@@ -18,6 +19,7 @@ const publicRoutes = [
     { path: config.routes.home, component: Home },
     { path: config.routes.history, component: History },
     { path: config.routes.moto, component: MotoDetail },
+    {path: config.routes.cart, component: Cart, },
     { path: config.routes.login, component: Login, layout: null },
     { path: config.routes.register, component: Register, layout: null },
     { path: config.routes.admin, component: HomeAdmin, layout: AdminLayout },

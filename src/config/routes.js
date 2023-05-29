@@ -6,6 +6,7 @@ const routes = {
     register: "/register",
     history: "/history",
     admin: "/admin",
+    cart: "/cart",
     profile: "/profile",
     managerAccount: "admin/managerAccount",
     updateProfile: "/admin/updateProfile",
