@@ -13,9 +13,9 @@
 
         &__list {
             width: 20%;
-            border-right: 1px solid;
             
             &__item {
+                margin-bottom: 2rem !important; 
                 cursor: pointer;
 
                 img {
