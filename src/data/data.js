@@ -34,50 +34,27 @@ export const policy = [
 ];
 
 export const account = [
+        
     {
         id: 1,
-        name: "Viết Trường",
-        email: "viettruong0825@gmail.com",
-        account: "viettruong",
-        password: "123456abc",
-        role: "Admin",
-    },
-    {
-        id: 2,
-        name: "Đắc Toàn",
-        email: "viettruong0825@gmail.com",
-        account: "dactoan",
-        password: "123456abc",
-        role: "Admin",
-    },
-    {
-        id: 3,
-        name: "Ngọc Trọng",
-        email: "viettruong0825@gmail.com",
-        account: "ngoctrong",
-        password: "123456abc",
-        role: "Admin",
-    },
-    {
-        id: 4,
         name: "Hữu Tam",
-        email: "viettruong0825@gmail.com",
+        email: "nguyenhuutam@gmail.com",
         account: "huutam",
         password: "123456abc",
         role: "Admin",
     },
     {
-        id: 5,
+        id: 2,
         name: "NV1",
-        email: "viettruong0825@gmail.com",
+        email: "nv10825@gmail.com",
         account: "nhanvien01",
         password: "123456abc",
         role: "Nhân viên",
     },
     {
-        id: 6,
+        id: 3,
         name: "khach",
-        email: "viettruong0825@gmail.com",
+        email: "nguyenvana@gmail.com",
         account: "Nguyễn Văn A",
         password: "123456abc",
         role: "Khách hàng",
@@ -98,53 +75,53 @@ export const moto = [
         image: [
             {
                 id: 1,
-                url: "https://cdn.honda.com.vn/motorbike-versions/December2021/AjAslqMuYpko2d6wmuEs.png",
+                url: "https://image.vtc.vn/resize/th/upload/2021/12/25/winnerx2021zing7-08385748.jpg",
             },
             {
                 id: 2,
-                url: "https://cdn.honda.com.vn/motorbike-versions/November2022/v3mHZHIh1RLL4P8nndyd.png",
+                url: "https://cafefcdn.com/203337114487263232/2021/12/5/2019-honda-winner-x-16386887446871901307020.jpg",
             },
         ],
     },
     {
         id: 2,
-        name: "Super Cub C125",
+        name: "Vario 150",
         autoMaker: "Honda",
         price: 110.0,
         type: "Xe số",
         status: "Sẵn sàng",
         licensePlates: "43F1-145.12",
-        description: "Super Cub C125",
-        slug: "Super-Cub-C125",
+        description: "Vario 150",
+        slug: "Vario 150",
         image: [
             {
                 id: 1,
-                url: "https://cdn.honda.com.vn/motorbike-strong-points/October2021/WwL6LIRJq466Z2Z5irlr.png",
+                url: "https://znews-photo.zingcdn.me/w660/Uploaded/lce_cjvcc/2020_05_29/VPT_5879_zing.jpg",
             },
             {
                 id: 2,
-                url: "https://cdn.honda.com.vn/motorbike-versions/October2021/rekvNMjwCvz3tiYHy27g.png",
+                url: "https://imgx.gridoto.com/crop/0x0:0x0/750x500/photo/2022/01/10/modifikasi-honda-vario-150-6jpg-20220110040347.jpg",
             },
         ],
     },
     {
         id: 3,
-        name: "SH350i",
+        name: "Honda SH 150",
         autoMaker: "Honda",
         price: 180.0,
         type: "Xe ga",
         status: "Sẵn sàng",
         licensePlates: "43F1-345.45",
-        description: "SH350i",
-        slug: "SH-350i",
+        description: "Honda SH 150",
+        slug: "Honda SH 150",
         image: [
             {
                 id: 1,
-                url: "https://cdn.honda.com.vn/motorbike-versions/December2022/VlhEoBOm76qFSuONryD1.png",
+                url: "https://giaxe.2banh.vn/dataupload/products/images/1680336996-6899890309752f17d8246fdb72bdcb86.jpg",
             },
             {
                 id: 2,
-                url: "https://cdn.honda.com.vn/motorbike-versions/December2022/pxNbshmGP0Oz6VXFSZrb.png",
+                url: "https://kimthanh.online/wp-content/uploads/2022/11/gia-xe-honda-sh-2023-bao-nhieu.jpg",
             },
         ],
     },
@@ -161,16 +138,37 @@ export const moto = [
         image: [
             {
                 id: 1,
-                url: "https://cdn.honda.com.vn/motorbike-versions/November2022/NZBGpkdoYhzAXSph7Pev.jpg",
+                url: "https://static.automotor.vn/images/upload/2020/12/17/honda-vision.jpg",
             },
             {
                 id: 2,
-                url: "https://cdn.honda.com.vn/motorbike-versions/November2022/igqvib4jtaVxAEcQ2y9k.jpg",
+                url: "https://giaxe.2banh.vn/cache/dataupload/products/slides/520_368_9edfb2a5c1f01e53a8c517455d332d6f.jpg",
             },
         ],
     },
     {
         id: 5,
+        name: "Honda Ware 110",
+        autoMaker: "Honda",
+        price: 170.0,
+        type: "Xe số",
+        status: "Sẵn sàng",
+        licensePlates: "43F1-123.45",
+        description: "Honda Ware 110",
+        slug: "Honda Ware 110",
+        image: [
+            {
+                id: 1,
+                url: "https://giaxe.2banh.vn/dataupload/products/images/1669694016-058c17349b846c48cb433b0e4e4717f7.jpg",
+            },
+            {
+                id: 2,
+                url: "https://files01.danhgiaxe.com/2Pvn-ctu4_52I0jFqqqJoYqOi-k=/fit-in/1280x0/20230107/honda-wave-alpha-110-3-201701.jpg",
+            },
+        ],
+    },
+    {
+        id: 6,
         name: "Honda Air Blade",
         autoMaker: "Honda",
         price: 170.0,
@@ -182,11 +180,11 @@ export const moto = [
         image: [
             {
                 id: 1,
-                url: "https://cdn.honda.com.vn/motorbike-versions/May2022/UDvt2b8oUaEjVwt3fY1q.png",
+                url: "https://xehay.vn/uploads/images/2021/9/04/Xehay-AirBlade-27102021-3.jpg",
             },
             {
                 id: 2,
-                url: "https://cdn.honda.com.vn/motorbike-versions/May2022/bckho9q1kDOnzCApjNpq.png",
+                url: "https://cdn.tuoitrethudo.com.vn/stores/news_dataimages/mailinhxehay/112021/02/09/xehay-airblade-27102021-420211102093516.5507940.JPG",
             },
         ],
     },
