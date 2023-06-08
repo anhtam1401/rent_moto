@@ -1,25 +1,23 @@
-import config from "~/config";
-import MotoDetail from "~/pages/MotoDetail";
-import Home from "~/pages/Home/Home";
-import Login from "~/pages/Login/Login";
-import Register from "~/pages/Register/Register";
-import HomeAdmin from "~/pages/Admin/HomeAdmin";
-import Profile from "~/pages/Profile/Profile";
-import AdminLayout from "~/layouts/AdminLayout";
-import Account from "~/pages/Admin/Account";
-import Cart from '~/pages/Cart'
-import User from "~/pages/Admin/User";
-import ManagerMoto from "~/pages/Admin/ManagerMoto";
-import AcceptMoto from "~/pages/Admin/AcceptMoto";
-import AcceptReturnMoto from "~/pages/Admin/AcceptReturnMoto";
-import History from "~/pages/History";
+import config from '~/config';
+import MotoDetail from '~/pages/MotoDetail';
+import Home from '~/pages/Home/Home';
+import Login from '~/pages/Login/Login';
+import Register from '~/pages/Register/Register';
+import HomeAdmin from '~/pages/Admin/HomeAdmin';
+import Profile from '~/pages/Profile/Profile';
+import AdminLayout from '~/layouts/AdminLayout';
+import Account from '~/pages/Admin/Account';
+import User from '~/pages/Admin/User';
+import ManagerMoto from '~/pages/Admin/ManagerMoto';
+import AcceptMoto from '~/pages/Admin/AcceptMoto';
+import AcceptReturnMoto from '~/pages/Admin/AcceptReturnMoto';
+import Add from '~/pages/Admin/ManagerMoto/Action';
+import Action from '~/pages/Admin/AcceptReturnMoto/Action';
 
 // public routes
 const publicRoutes = [
     { path: config.routes.home, component: Home },
-    { path: config.routes.history, component: History },
     { path: config.routes.moto, component: MotoDetail },
-    {path: config.routes.cart, component: Cart, },
     { path: config.routes.login, component: Login, layout: null },
     { path: config.routes.register, component: Register, layout: null },
     { path: config.routes.admin, component: HomeAdmin, layout: AdminLayout },
@@ -40,6 +38,11 @@ const publicRoutes = [
         layout: AdminLayout,
     },
     {
+        path: config.routes.addUpdateInfoMoto,
+        component: Add,
+        layout: AdminLayout,
+    },
+    {
         path: config.routes.acceptRentMoto,
         component: AcceptMoto,
         layout: AdminLayout,
@@ -47,6 +50,11 @@ const publicRoutes = [
     {
         path: config.routes.acceptReturnMoto,
         component: AcceptReturnMoto,
+        layout: AdminLayout,
+    },
+    {
+        path: config.routes.addAcceptReturnMoto,
+        component: Action,
         layout: AdminLayout,
     },
 ];
