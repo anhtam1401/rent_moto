@@ -34,7 +34,7 @@ function Profile() {
                         <MDBCard className="mb-4">
                             <MDBCardBody className="text-center">
                                 <MDBCardImage
-                                    src={images.logo}
+                                    src={images.anh2}
                                     alt="avatar"
                                     className="rounded-circle"
                                     style={{ width: "150px" }}

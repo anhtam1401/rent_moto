@@ -22,11 +22,11 @@ function Moto(props) {
     return (
         <MDBContainer fluid>
             <MDBRow className='justify-content-center mb-0'>
-                <MDBCol md='12' xl='10'>
+                <MDBCol md='120' xl='100'>
                     <MDBCard className='shadow-0 border rounded-3 mt-5 mb-3'>
                         <MDBCardBody>
                             <MDBRow>
-                                <MDBCol md='12' lg='3' className='mb-4 mb-lg-0'>
+                                <MDBCol md='20' lg='7' className='mb-4 mb-lg-0'>
                                     <MDBRipple
                                         rippleColor='light'
                                         rippleTag='div'
@@ -35,8 +35,9 @@ function Moto(props) {
                                         <MDBCardImage
                                             src={props.img[0].url}
                                             fluid
-                                            className='w-100'
+                                            className='w-10'
                                         />
+                                        
                                         <a href='#!'>
                                             <div
                                                 className='mask'
@@ -48,71 +49,45 @@ function Moto(props) {
                                         </a>
                                     </MDBRipple>
                                 </MDBCol>
-                                <MDBCol md='6'>
-                                    <h2 className={cx('name')}>{props.name}</h2>
-                                    <div className='d-flex flex-row'>
-                                        <div className='text-danger mb-1 me-2'>
-                                            <MDBIcon fas icon='star' />
-                                            <MDBIcon fas icon='star' />
-                                            <MDBIcon fas icon='star' />
-                                            <MDBIcon fas icon='star' />
-                                        </div>
-                                        <span>310</span>
-                                    </div>
-                                    <div className='mt-1 mb-0 text-muted small'>
-                                        <span>100% cotton</span>
-                                        <span className='text-primary'>
-                                            {' '}
-                                            •{' '}
-                                        </span>
-                                        <span>Light weight</span>
-                                        <span className='text-primary'>
-                                            {' '}
-                                            •{' '}
-                                        </span>
-                                        <span>
-                                            Best finish
-                                            <br />
-                                        </span>
-                                    </div>
+                                <MDBCol md='5'>
+                                    <h1 className={cx('name')}>{props.name}</h1>
+                                    <h4>Giá : 
+                                        {
+                                            props.price
+                                        }
+                                        .000
+                                        VNĐ / Ngày
+                                    </h4>
+                                    
+                                    
                                     <div className='mb-2 text-muted small'>
-                                        <span>Unique design</span>
-                                        <span className='text-primary'>
-                                            {' '}
-                                            •{' '}
-                                        </span>
-                                        <span>For men</span>
-                                        <span className='text-primary'>
-                                            {' '}
-                                            •{' '}
-                                        </span>
-                                        <span>
-                                            Casual
-                                            <br />
-                                        </span>
+                                        
                                     </div>
+                                    <br/>
+                                    
+                                    <span>• Dịch vụ G7 MotorBikecho thuê các dòng 
+                                    xe đời 2018 - 2021.</span><br/>
+                                    <span>• Ưu đãi thuê trên 3 ngày</span><br/>
+                                    <span>• Quy định: Thời gian thuê được tính 1 ngày là 24 tiếng, quá thời gian 6 tiếng sẽ tính thêm 1 ngày (được trể 1 tiếng).</span>
                                     <p className='text-truncate mb-4 mb-md-0'>
-                                        There are many variations of passages of
-                                        Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form,
-                                        by injected humour, or randomised words
-                                        which don't look even slightly
-                                        believable.
+                                   
+
+                                   
+                                    • Thủ tục đầy đủ các giấy tờ nhanh gọn    
+                                    xe đời 2018 - 2021. •Ưu đãi thuê trên 3 ngày
+                                    ekfskfskfksfk;skf;sk;fks;fk
                                     </p>
                                 </MDBCol>
                                 <MDBCol
-                                    md='6'
-                                    lg='3'
+                                    md='60'
+                                    lg='30'
                                     className='border-sm-start-none border-start'
+
                                 >
-                                    <div className='d-flex flex-row align-items-center mb-1'>
-                                        <h4 className='mb-1 me-1'>$13.99</h4>
-                                        <span className='text-danger'>
-                                            <s>{props.price}</s>
-                                        </span>
-                                    </div>
+                                    
                                     <div className='d-flex flex-column mt-4'>
                                         <Button
+                                            to={`/moto/${props.slug}`}
                                             outline
                                             color='primary'
                                             size='sm'

@@ -53,12 +53,14 @@ function User() {
     };
 
     return (
+        
         <div className={cx("wrapper")}>
+            
             <h1 className={cx("header")}>Thông tin cá nhân</h1>
             <div className={cx("wrapper-content")}>
                 <MDBContainer className="overflow-hidden">
-                    <MDBRow className="gy-5">
-                        <MDBCol size="4" className={cx("col")}>
+                    <MDBRow className="gy-50">
+                        <MDBCol size="8000" className={cx("col")}>
                             <div className={cx("fields")}>
                                 <label htmlFor="">Tên</label>
                                 <div className={cx("input_field")}>
@@ -123,8 +125,6 @@ function User() {
                                     />
                                 </div>
                             </div>
-                        </MDBCol>
-                        <MDBCol size="4">
                             <div className={cx("fields")}>
                                 <label htmlFor="">Ngày sinh</label>
                                 <div className={cx("input_field")}>

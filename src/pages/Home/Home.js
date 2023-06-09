@@ -20,7 +20,7 @@ function Home() {
             />
             <div className={cx("main-content")}>
                 <h2 className={cx("content__title")}>
-                    TẤT CẢ CÁC XE ĐANG ĐƯỢC CHO THUÊ
+                     XE ĐANG ĐƯỢC CHO THUÊ TẠI G7 MOTORBIKE
                 </h2>
                 <div className={cx("wrapper-car")}>
                     {motors.map((item, index) => {

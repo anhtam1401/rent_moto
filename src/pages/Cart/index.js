@@ -132,7 +132,7 @@ function Cart() {
                             </div>
                             <div class="ibox-content">
                                 <span>Tổng tiền</span>
-                                <h2 class="font-bold">000 VND</h2>
+                                <h2 class="font-bold">350.000 VND</h2>
                             </div>
                         </div>
                     </div>

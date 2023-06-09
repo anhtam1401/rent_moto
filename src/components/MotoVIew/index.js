@@ -80,14 +80,19 @@ function MotoView({ item }) {
                     </div>
                     <div className={cx("product__info__item")}>
                         <div className={cx("product__info__item__title")}>
-                            Trạng thái: {product?.status}
+                            Quy định: Thời gian thuê được tính 1 ngày là 24 tiếng, quá thời gian 6 tiếng sẽ tính thêm 1 ngày (được trể 1 tiếng).
                         </div>
                     </div>
+                    
                     <div className={cx("product__info__item")}>
                         <span className={cx("product__info__item__price")}>
-                            Giá: {product?.price}.000 VNĐ / 1 ngày
+                               Giá: {product?.price}.000 VNĐ / 1 ngày
                         </span>
                     </div>
+                    <span className={cx("product__info__item__price")}>
+                            Giá:90.000 VNĐ / 3 ngày
+                    </span>
+                    
                     <div className={cx("wrapper-date-picker")}>
                         <Row className="main-row">
                             <Col lg={20} sm={24} className={cx("col")}>
@@ -147,11 +152,11 @@ function MotoView({ item }) {
                     <div className={cx("product-description__description")}>
                         <p>
                             Có giao nhận xe tận nơi miễn phí tại sân bay, bến
-                            xe, bến tàu và các quận huyện nội thành Đà Nẵng.
+                            xe, bến tàu và các quận huyện nội thành Đà Nẵng.<br/>
                             Thời gian thuê được tính 1 ngày là 24 tiếng, quá
                             thời gian 6 tiếng sẽ tính thêm 1 ngày(được trể 1
-                            tiếng). Khi thuê xe sẽ làm hợp đồng có 2 bản , mỗi
-                            bên giữ 1 bản có ký tên đóng dấu công ty. Thời gian
+                            tiếng) .<br/>Khi thuê xe sẽ làm hợp đồng có 2 bản , mỗi
+                            bên giữ 1 bản có ký tên đóng dấu công ty.<br/> Thời gian
                             giao nhận xe: từ 7h00 - 19h30 hàng ngày, tất cả các
                             ngày lễ tết vv…
                         </p>
