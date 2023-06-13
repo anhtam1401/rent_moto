@@ -34,7 +34,7 @@ function Profile() {
                         <MDBCard className="mb-4">
                             <MDBCardBody className="text-center">
                                 <MDBCardImage
-                                    src={images.anh2}
+                                    src={images.logo}
                                     alt="avatar"
                                     className="rounded-circle"
                                     style={{ width: "150px" }}
@@ -57,7 +57,7 @@ function Profile() {
                         </MDBCard>
                     </MDBCol>
 
-                    <MDBCol lg="8">
+                    <MDBCol lg="12">
                         <MDBCard className="mb-4">
                             <MDBCardBody>
                                 <MDBRow>
