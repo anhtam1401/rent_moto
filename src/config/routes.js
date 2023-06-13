@@ -4,6 +4,7 @@ const routes = {
     login: '/login',
     logout: '/logout',
     register: '/register',
+    history: '/history',
     admin: '/admin',
     cart: '/cart',
     profile: '/profile',
