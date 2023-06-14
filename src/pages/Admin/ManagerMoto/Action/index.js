@@ -13,6 +13,7 @@ import Button from '~/components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -26,6 +27,7 @@ function Action() {
     const [bienSoXe, setBienSoXe] = useState(data?.bienSoXe ?? '');
     const [hinhAnh, setHinhAnh] = useState(data?.hinhAnh ?? []);
     const [multipleImages, setMultipleImages] = useState([]);
+    const navigate = useNavigate();
     const formData = new FormData();
 
     useEffect(() => {
@@ -84,6 +86,7 @@ function Action() {
                 // Xử lý phản hồi thành công
                 console.log('Yêu cầu POST thành công.');
                 console.log('Phản hồi từ máy chủ:', response.data);
+                navigate(-1);
             })
             .catch((error) => {
                 // Xử lý lỗi nếu có

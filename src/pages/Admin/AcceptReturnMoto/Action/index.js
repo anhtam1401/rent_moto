@@ -6,6 +6,7 @@ import { useState, useEffect, useContext } from 'react';
 import Button from '~/components/Button';
 import ModalAddError from '~/components/Modal/ModalAddError';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function Action() {
@@ -14,6 +15,7 @@ function Action() {
     const [checkAll, setCheckAll] = useState(false);
     const [dataModal, setDataModal] = useState(data || []);
     const [fouls, setFouls] = useState([]);
+    const navigate = useNavigate();
     console.log(dataModal);
 
     const handleCheckAll = () => {
@@ -65,6 +67,7 @@ function Action() {
                 // Xử lý phản hồi thành công
                 console.log('Yêu cầu POST thành công.');
                 console.log('Phản hồi từ máy chủ:', response.data);
+                navigate(-1);
             })
             .catch((error) => {
                 // Xử lý lỗi nếu có
