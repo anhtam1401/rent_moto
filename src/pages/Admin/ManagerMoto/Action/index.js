@@ -25,6 +25,7 @@ function Action() {
     const [giaThue, setGiaThue] = useState(data?.giaThue ?? '');
     const [loaiXe, setLoaiXe] = useState(data?.loaiXe ?? '');
     const [bienSoXe, setBienSoXe] = useState(data?.bienSoXe ?? '');
+    const [trangThai, setTrangThai] = useState(data?.trangThai ?? '');
     const [hinhAnh, setHinhAnh] = useState(data?.hinhAnh ?? []);
     const [multipleImages, setMultipleImages] = useState([]);
     const navigate = useNavigate();
@@ -35,6 +36,7 @@ function Action() {
         setTenXe(data?.tenXe ?? '');
         setHangXe(data?.hangXe ?? '');
         setGiaThue(data?.giaThue ?? '');
+        setTrangThai(data?.trangThai ?? '');
         setLoaiXe(data?.loaiXe ?? '');
         setBienSoXe(data?.bienSoXe ?? '');
     }, [data]);
@@ -64,7 +66,7 @@ function Action() {
         formData.append('bienSoXe', bienSoXe);
         formData.append('loaiXe', loaiXe);
         formData.append('giaThue', giaThue);
-        formData.append('trangThai', 'Hoạt động');
+        formData.append('trangThai', trangThai);
         formData.append('moTa', null);
 
         if (typeModal !== 'ADD') {
@@ -130,6 +132,38 @@ function Action() {
                 onChange={(e) => setBienSoXe(e.target.value)}
                 loaiXe='text'
             />
+            <div className={cx('wrapper-dropdown')}>
+                <MDBDropdown className={cx('dropdown')}>
+                    <MDBDropdownToggle>Loại xe</MDBDropdownToggle>
+                    <MDBDropdownMenu>
+                        <MDBDropdownItem
+                            link
+                            onClick={() => {
+                                setTrangThai('Hoạt động');
+                            }}
+                        >
+                            Hoạt động
+                        </MDBDropdownItem>
+                        <MDBDropdownItem
+                            link
+                            onClick={() => {
+                                setTrangThai('Ngừng hoạt động');
+                            }}
+                        >
+                            Ngừng hoạt động
+                        </MDBDropdownItem>
+                        <MDBDropdownItem
+                            link
+                            onClick={() => {
+                                setTrangThai('Mất xe');
+                            }}
+                        >
+                            Mất xe
+                        </MDBDropdownItem>
+                    </MDBDropdownMenu>
+                </MDBDropdown>
+                <div className={cx('value_dropdown')}>{trangThai}</div>
+            </div>
             <div className={cx('wrapper-dropdown')}>
                 <MDBDropdown className={cx('dropdown')}>
                     <MDBDropdownToggle>Loại xe</MDBDropdownToggle>
