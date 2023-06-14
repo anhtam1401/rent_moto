@@ -12,7 +12,6 @@ import {
 } from 'mdb-react-ui-kit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { acceptReturnMoto } from '~/data/data';
 import { useState, useEffect, useContext } from 'react';
 import { AppContext } from '~/Context/AppContext';
 import Button from '~/components/Button';
@@ -21,6 +20,22 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 function AcceptReturnMoto() {
     const { setTypeModal, setData } = useContext(AppContext);
+    const [acceptReturnMoto, setAcceptReturnMoto] = useState();
+    useEffect(() => {
+        const fetchData = () => {
+            fetch('http://localhost:5000/getAllOrder')
+                .then((response) => response.json())
+                .then((data) => {
+                    setAcceptReturnMoto(data.data);
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        };
+        fetchData();
+    }, []);
+
     return (
         <div className={cx('wrapper')}>
             <h1 className={cx('header')}>Xác nhận trả xe</h1>
@@ -32,32 +47,35 @@ function AcceptReturnMoto() {
                         <th scope='col'>Ngày bắt đầu</th>
                         <th scope='col'>Ngày kết thúc</th>
                         <th scope='col'>Trạng thái</th>
+                        <th scope='col'>Mã nhân viên duyệt</th>
                         <th scope='col'>Giá thuê</th>
                         <th scope='col'>Actions</th>
                     </tr>
                 </MDBTableHead>
                 <MDBTableBody>
-                    {acceptReturnMoto.map((item) => {
+                    {acceptReturnMoto?.map((item) => {
                         return (
                             <tr key={item.id}>
                                 <td>
-                                    <p className='fw-bold mb-1'>{item.id}</p>
+                                    <p className='fw-bold mb-1'>
+                                        {item.maThue}
+                                    </p>
                                 </td>
                                 <td>
                                     <div className='ms-3'>
                                         <p className='fw-bold mb-1'>
-                                            {item.name}
+                                            {item.hoTen}
                                         </p>
                                     </div>
                                 </td>
                                 <td>
                                     <p className='fw-normal mb-1'>
-                                        {item.startDate}
+                                        {item.ngayBD}
                                     </p>
                                 </td>
                                 <td>
                                     <p className='fw-bold mb-1'>
-                                        {item.endDate}
+                                        {item.ngayKT}
                                     </p>
                                 </td>
                                 <td>
@@ -66,11 +84,16 @@ function AcceptReturnMoto() {
                                         pill
                                         className='fw-bold mb-1'
                                     >
-                                        {item.status}
+                                        {item.trangThai}
                                     </MDBBadge>
                                 </td>
                                 <td>
-                                    <p className='fw-bold mb-1'>{item.price}</p>
+                                    <p className='fw-bold mb-1'>
+                                        {item.maNVDuyet}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p className='fw-bold mb-1'></p>
                                 </td>
                                 <td>
                                     <Button
@@ -97,33 +120,6 @@ function AcceptReturnMoto() {
                     })}
                 </MDBTableBody>
             </MDBTable>
-            <nav aria-label='...' className={cx('page_navigation')}>
-                <MDBPagination className='mb-0'>
-                    <MDBPaginationItem disabled>
-                        <MDBPaginationLink
-                            href='#'
-                            tabIndex={-1}
-                            aria-disabled='true'
-                        >
-                            Previous
-                        </MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBPaginationLink href='#'>1</MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem active aria-current='page'>
-                        <MDBPaginationLink href='#'>
-                            2 <span className='visually-hidden'>(current)</span>
-                        </MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBPaginationLink href='#'>3</MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBPaginationLink href='#'>Next</MDBPaginationLink>
-                    </MDBPaginationItem>
-                </MDBPagination>
-            </nav>
         </div>
     );
 }

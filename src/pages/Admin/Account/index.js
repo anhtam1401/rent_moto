@@ -26,8 +26,7 @@ const TYPE_MODAL = {
 function Account() {
     const [accountData, setAccountData] = useState(account);
     const [page, setPage] = useState(1);
-    const { setIsModalAccountVisible, setTypeModal, setData } =
-        useContext(AppContext);
+    const { setTypeModal, setData } = useContext(AppContext);
 
     useEffect(() => {
         setAccountData(accountData);
@@ -38,7 +37,6 @@ function Account() {
             <h1 className={cx('header')}>Quản lí tài khoản</h1>
             <MDBBtn
                 onClick={() => {
-                    setIsModalAccountVisible(true);
                     setTypeModal(TYPE_MODAL.add);
                     setData(undefined);
                 }}
@@ -116,7 +114,6 @@ function Account() {
                                         rounded
                                         size='sm'
                                         onClick={() => {
-                                            setIsModalAccountVisible(true);
                                             setTypeModal(TYPE_MODAL.update);
                                             setData(item);
                                         }}

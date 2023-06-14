@@ -2,17 +2,12 @@ import classNames from 'classnames/bind';
 import styles from './ManagerMoto.module.scss';
 import {
     MDBBadge,
-    MDBBtn,
     MDBTable,
     MDBTableHead,
     MDBTableBody,
-    MDBPagination,
-    MDBPaginationItem,
-    MDBPaginationLink,
 } from 'mdb-react-ui-kit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { moto } from '~/data/data';
 import { useState, useEffect, useContext } from 'react';
 import { AppContext } from '~/Context/AppContext';
 import Button from '~/components/Button';
@@ -26,9 +21,23 @@ const TYPE_PAGE = {
 };
 
 function ManagerMoto() {
-    const [motoData, setMotoData] = useState(moto);
-    const { setIsModalMotoVisible, setTypeModal, setData } =
-        useContext(AppContext);
+    const [motoData, setMotoData] = useState();
+    const { setTypeModal, setData } = useContext(AppContext);
+
+    useEffect(() => {
+        const fetchData = () => {
+            fetch('http://localhost:5000/getAllXe')
+                .then((response) => response.json())
+                .then((data) => {
+                    setMotoData(data.data);
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        };
+        fetchData();
+    }, []);
 
     return (
         <div className={cx('wrapper')}>
@@ -37,7 +46,6 @@ function ManagerMoto() {
                 primary
                 to={config.routes.updateInfoMoto + '/action'}
                 onClick={() => {
-                    setIsModalMotoVisible(true);
                     setTypeModal(TYPE_PAGE.add);
                     setData(undefined);
                 }}
@@ -60,42 +68,42 @@ function ManagerMoto() {
                     </tr>
                 </MDBTableHead>
                 <MDBTableBody>
-                    {motoData.map((item) => {
+                    {motoData?.map((item) => {
                         return (
-                            <tr key={item.id}>
+                            <tr key={item.maXe}>
                                 <td>
-                                    <p className='fw-bold mb-1'>{item.id}</p>
+                                    <p className='fw-bold mb-1'>{item.maXe}</p>
                                 </td>
                                 <td>
                                     <div className='ms-3'>
                                         <p className='fw-bold mb-1'>
-                                            {item.name}
+                                            {item.tenXe}
                                         </p>
                                     </div>
                                 </td>
                                 <td>
                                     <p className='fw-normal mb-1'>
-                                        {item.autoMaker}
+                                        {item.hangXe}
                                     </p>
                                 </td>
                                 <td>
                                     <p className='fw-normal mb-1'>
-                                        {item.price}
+                                        {item.giaThue}.000
                                     </p>
                                 </td>
                                 <td>
                                     <p className='fw-normal mb-1'>
-                                        {item.type}
+                                        {item.loaiXe}
                                     </p>
                                 </td>
                                 <td>
-                                    {item.status == 'Sẵn sàng' ? (
+                                    {item.trangThai == 'Sẵn sàng' ? (
                                         <MDBBadge
                                             color='success'
                                             pill
                                             className='fw-normal mb-1'
                                         >
-                                            {item.status}
+                                            {item.trangThai}
                                         </MDBBadge>
                                     ) : (
                                         <MDBBadge
@@ -103,18 +111,18 @@ function ManagerMoto() {
                                             pill
                                             className='fw-normal mb-1'
                                         >
-                                            {item.status}
+                                            {item.trangThai}
                                         </MDBBadge>
                                     )}
                                 </td>
                                 <td>
                                     <p className='fw-normal mb-1'>
-                                        {item.licensePlates}
+                                        {item.bienSoXe}
                                     </p>
                                 </td>
                                 <td>
                                     <p className='fw-normal mb-1'>
-                                        {item.description}
+                                        {item.moTa}
                                     </p>
                                 </td>
                                 <td>
@@ -128,7 +136,6 @@ function ManagerMoto() {
                                         rounded
                                         size='sm'
                                         onClick={() => {
-                                            setIsModalMotoVisible(true);
                                             setTypeModal(TYPE_PAGE.update);
                                             setData(item);
                                         }}
@@ -144,33 +151,6 @@ function ManagerMoto() {
                     })}
                 </MDBTableBody>
             </MDBTable>
-            <nav aria-label='...' className={cx('page_navigation')}>
-                <MDBPagination className='mb-0'>
-                    <MDBPaginationItem disabled>
-                        <MDBPaginationLink
-                            href='#'
-                            tabIndex={-1}
-                            aria-disabled='true'
-                        >
-                            Previous
-                        </MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBPaginationLink href='#'>1</MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem active aria-current='page'>
-                        <MDBPaginationLink href='#'>
-                            2 <span className='visually-hidden'>(current)</span>
-                        </MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBPaginationLink href='#'>3</MDBPaginationLink>
-                    </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBPaginationLink href='#'>Next</MDBPaginationLink>
-                    </MDBPaginationItem>
-                </MDBPagination>
-            </nav>
         </div>
     );
 }

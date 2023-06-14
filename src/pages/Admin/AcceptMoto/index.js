@@ -19,7 +19,7 @@ import { AppContext } from '~/Context/AppContext';
 const cx = classNames.bind(styles);
 
 function AcceptMoto() {
-    const { setIsModalAcceptVisible, setTypeModal, setData } =
+    const {  setTypeModal, setData } =
         useContext(AppContext);
     return (
         <div className={cx('wrapper')}>
@@ -42,7 +42,6 @@ function AcceptMoto() {
                             <tr
                                 key={item.id}
                                 onClick={() => {
-                                    setIsModalAcceptVisible(true);
                                     setTypeModal('ACCEPT');
                                     setData(item);
                                 }}
