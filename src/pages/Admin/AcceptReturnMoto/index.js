@@ -36,6 +36,15 @@ function AcceptReturnMoto() {
         fetchData();
     }, []);
 
+    const handleTotalOneRent = (item) => {
+        if (item?.chiTiet) {
+            return item.chiTiet.reduce((total, item) => {
+                return total + item.giaThue;
+            }, 0);
+        }
+        return 0;
+    };
+
     return (
         <div className={cx('wrapper')}>
             <h1 className={cx('header')}>Xác nhận trả xe</h1>
@@ -93,7 +102,9 @@ function AcceptReturnMoto() {
                                     </p>
                                 </td>
                                 <td>
-                                    <p className='fw-bold mb-1'></p>
+                                    <p className='fw-bold mb-1'>
+                                        {handleTotalOneRent(item)}.000
+                                    </p>
                                 </td>
                                 <td>
                                     <Button
